@@ -43,4 +43,9 @@ puts "5 skills created"
       thumb_image: "http://via.placeholder.com/350x250" 
     )
   end
+  3.times do |techonology|
+    Portfolio.last.techonologies.create!(
+      name: "Techonology #{techonology}"
+      )
+    end
 end
