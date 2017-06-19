@@ -12,7 +12,12 @@
     <%= form.label :body %>
     <%= form.text_area :body, id: :portfolio_body %>
   </div>
-
+  <ul>
+    <%= form.fields_for :techonologies do |techonologies_form| %>
+      <li><%= techonologies_form.label :name %></li>
+      <li><%= techonologies_form.text_field :name %></li>
+    <% end %>
+  </ul>
   <div class="actions">
     <%= form.submit %>
   </div>
