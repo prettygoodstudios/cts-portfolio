@@ -14,7 +14,7 @@ class PortfoliosController < ApplicationController
   # POST /blogs
   # POST /blogs.json
   def create
-    @portfolio_item = Portfolio.new(params.require(:portfolio).permit(:title, :subtitle, :body, stechonologies_attributes: [:name]))
+    @portfolio_item = Portfolio.new(portfolio_params)
 
     respond_to do |format|
       if @portfolio_item.save
@@ -34,7 +34,7 @@ class PortfoliosController < ApplicationController
   def update
     @portfolio_item = Portfolio.find(params[:id])
     respond_to do |format|
-      if @portfolio_item.update(params.require(:portfolio).permit(:title, :subtitle, :body))
+      if @portfolio_item.update(portfolio_params)
         format.html { redirect_to portfolios_path, notice: 'Your Portfolio Item Is Updated.' }
         format.json { render :show, status: :ok, location: @portfolio_item }
       else
@@ -52,6 +52,13 @@ class PortfoliosController < ApplicationController
     respond_to do |format|
       format.html { redirect_to portfolios_url, notice: 'The Portfolio item was removed.' }
     end
+  end
+  private 
+  def portfolio_params
+    return params.require(:portfolio).permit(:title, 
+                                             :subtitle, 
+                                             :body, 
+                                             techonologies_attributes: [:name])
   end
 end
 
