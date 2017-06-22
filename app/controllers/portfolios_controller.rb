@@ -29,6 +29,7 @@ class PortfoliosController < ApplicationController
   end
   def edit
     @portfolio_item = Portfolio.find(params[:id])
+    3.times { @portfolio_item.techonologies.build }
   end
   # PATCH/PUT /blogs/1
   # PATCH/PUT /blogs/1.json

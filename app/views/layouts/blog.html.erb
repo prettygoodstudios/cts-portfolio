@@ -18,7 +18,7 @@
       <%= link_to "Login", new_user_session_path %>
     <% end %>
     <%= yield %>
-    <%= render "shared/nav" %>
+    <%= render "shared/nav" , location: 'bottom'%>
     </div>
     <% if session[:source] %>
       <p>Thanks for visiting me from <%= session[:source] %>.</p>
