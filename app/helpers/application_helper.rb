@@ -13,4 +13,7 @@ module ApplicationHelper
       content_tag(:p,"Thanks for visiting me from #{session[:source]} and you are on the #{layout_name} page.", class: "source-greeting")
     end
   end
+  def copyright_generator
+    @copyright = RustViewTool::Renderer.copyright 'Miguel Rust', 'All Rights Reserved'
+  end
 end
