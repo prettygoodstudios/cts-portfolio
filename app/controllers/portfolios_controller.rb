@@ -1,4 +1,5 @@
 class PortfoliosController < ApplicationController
+  before_action :set_portfolio_item, only: [:edit, :update, :show, :destroy]
   layout "portfolio"
   def index
     @portfolio_items  = Portfolio.all
@@ -34,7 +35,6 @@ class PortfoliosController < ApplicationController
   # PATCH/PUT /blogs/1
   # PATCH/PUT /blogs/1.json
   def update
-    @portfolio_item = Portfolio.find(params[:id])
     respond_to do |format|
       if @portfolio_item.update(portfolio_params)
         format.html { redirect_to portfolios_path, notice: 'Your Portfolio Item Is Updated.' }
@@ -46,10 +46,8 @@ class PortfoliosController < ApplicationController
     end
   end
   def show
-    @portfolio_item = Portfolio.find(params[:id])
   end 
   def destroy
-    @portfolio_item = Portfolio.find(params[:id])
     @portfolio_item.destroy
     respond_to do |format|
       format.html { redirect_to portfolios_url, notice: 'The Portfolio item was removed.' }
@@ -61,6 +59,9 @@ class PortfoliosController < ApplicationController
                                              :subtitle, 
                                              :body, 
                                              techonologies_attributes: [:name])
+  end
+  def set_portfolio_item
+     @portfolio_item = Portfolio.find(params[:id])
   end
 end
 
