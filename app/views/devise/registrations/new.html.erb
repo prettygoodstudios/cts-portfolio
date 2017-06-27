@@ -1,32 +1,41 @@
-<h2>Sign up</h2>
-
+<div class="card">
+  <h3 class="card-header" style="color:black;">Sign Up</h3>
+  <div class="card-block">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
-
-  <div class="field">
+  <div class="row">
+<div class="col-md-6">
+  <div class="form-group">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.email_field :email, autofocus: true, class:'form-control' %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class:'form-control' %>
   </div>
-  <div class="field">
+  </div>
+  <div class="col-md-6">
+  <div class="form-group">
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.password_field :password, autocomplete: "off", class:'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= f.password_field :password_confirmation, autocomplete: "off", class:'form-control' %>
   </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+  </div>
+  <div class="col-md-9"></div>
+  <div class="actions col-md-3" style="text-align:right">
+    <%= f.submit "Sign up", class:'btn btn-success btn-block'%>
+  </div>
   </div>
 <% end %>
-
+<div class="authlinks" style="text-align:right">
 <%= render "devise/shared/links" %>
+</div>
+</div>
+</div>
