@@ -11,16 +11,16 @@
     </div>
   <% end %>
 
-  <div class="form-group">
+  <div class="field">
     <%= form.label :title %>
-    <%= form.text_field :title, id: :blog_title, class: 'form-control' %>
+    <%= form.text_field :title, id: :blog_title %>
   </div>
 
-  <div class="form-group">
+  <div class="field">
     <%= form.label :body %>
-    <%= form.text_area :body, id: :blog_body, class: 'form-control', rows:"15" %>
+    <%= form.text_area :body, id: :blog_body %>
   </div>
   <div class="actions">
-    <%= form.submit "Submit", class: 'btn btn-success' %>
+    <%= form.submit %>
   </div>
 <% end %>
