@@ -15,8 +15,6 @@ class PortfoliosController < ApplicationController
     @angular_portfolio_items = Portfolio.angular
   end
   def new
-    @portfolio_item = Portfolio.new
-    3.times { @portfolio_item.techonologies.build }
   end
   
   # POST /blogs
@@ -35,8 +33,6 @@ class PortfoliosController < ApplicationController
     end
   end
   def edit
-    @portfolio_item = Portfolio.find(params[:id])
-    3.times { @portfolio_item.techonologies.build }
   end
   # PATCH/PUT /blogs/1
   # PATCH/PUT /blogs/1.json
@@ -66,7 +62,7 @@ class PortfoliosController < ApplicationController
                                              :body,
                                              :main_image,
                                              :thumb_image,
-                                             techonologies_attributes: [:name])
+                                             techonologies_attributes: [:name, :id, :_destroy])
   end
   def set_portfolio_item
      @portfolio_item = Portfolio.find(params[:id])

@@ -28,5 +28,6 @@ module MyPortfolio
     # Don't generate system test files.
     config.generators.system_tests = nil
     config.action_controller.permit_all_parameters = true
+    config.web_console.whiny_requests = false
   end
 end
