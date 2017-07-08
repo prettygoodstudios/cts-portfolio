@@ -1,4 +1,9 @@
 <%= form_for(@portfolio_item) do |form| %>
+    <% if @portfolio_item.errors.any? %>
+        <% @portfolio_item.errors.full_messages.each do |error| %>
+            <%= alert_generator error %>
+        <% end %>
+    <% end %>
 <div class="form-group">
     <%= form.label :title %>
     <%= form.text_field :title, id: :portfolio_title, class:'form-control' %>
