@@ -37,7 +37,10 @@ module ApplicationHelper
       {
         url: portfolios_path,
         title: 'Portfolio'
-      }
+      },
+      { url: tech_news_path,
+        title: 'Tech News'
+      },
       ]
   end
   def nav_helper style, tag_type

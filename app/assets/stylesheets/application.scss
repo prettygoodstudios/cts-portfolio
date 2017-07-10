@@ -101,6 +101,9 @@ body {
   .nav-masthead {
     float: right;
   }
+  .cover-container{
+    width: 65rem;
+  }
 }
 
 
@@ -205,4 +208,16 @@ body {
     background-color: black;
     width: 100%;
 }
+
+.tech-news{
+  color:black;
+  margin:20px;
+}
+.tech-news a{
+  color:blue;
+}
+.tech-news > .card{
+   padding: 30px;
+}
+
 
