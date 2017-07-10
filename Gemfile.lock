@@ -107,8 +107,6 @@ GEM
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     gritter (1.2.0)
-<<<<<<< HEAD
-=======
     http (2.2.2)
       addressable (~> 2.3)
       http-cookie (~> 1.0)
@@ -118,7 +116,6 @@ GEM
       domain_name (~> 0.5)
     http-form_data (1.0.3)
     http_parser.rb (0.6.0)
->>>>>>> a78423cf4e950dfb221023fafb5bd227fe8461e9
     i18n (0.8.4)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
