@@ -1,15 +1,11 @@
 <div class="blog-post">
-            <h2 class="blog-post-title"><%= link_to blog.title.upcase, blog %></h2>
-            <p class="blog-post-meta">Published <%= distance_of_time_in_words(blog.created_at,Time.now)%> ago</p>
-            <p class="blog-post-meta">
-                <%= link_to blog.status.upcase, toggle_status_blog_path(blog), style:"display:inline;" if logged_in?(:site_admin)%>
-                <%= content_tag(:p, "/", style:"display:inline;") if logged_in?(:site_admin)%>
-                <%= link_to 'EDIT', edit_blog_path(blog) if logged_in?(:site_admin)%>
-                <%= content_tag(:p, "/", style:"display:inline;") if logged_in?(:site_admin)%>
-                <%= link_to 'DESTROY', blog, method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:site_admin)%>
-            </p>
-            <p class="blog-post-meta">
-              <%= blog.body %>
-              
-            </p>
-          </div><!-- /.blog-post -->
+  <h2 class="blog-post-title"><%= link_to blog.title.upcase, blog %></h2>
+  <p class="blog-post-meta">Published <%= distance_of_time_in_words(blog.created_at,Time.now)%> ago</p>
+  <p class="blog-post-meta">
+      <%= render partial: 'blogs/admin_actions', locals: { blog: blog} %>
+  </p>
+  <p class="blog-post-meta">
+    <%= blog.body %>
+    
+  </p>
+</div><!-- /.blog-post -->
