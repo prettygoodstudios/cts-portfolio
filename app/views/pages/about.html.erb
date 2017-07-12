@@ -1,12 +1,36 @@
 <div class="app-card-container">
   <div class="card">
     <div class="row">
-          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-              <center><%= image_tag "circular_logo.png", width: "100%", alt:"Profile Image", style:"border-radius:50%;"%></center> 
-          </div>
-          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-8">
-                <p><span class="strong">Hello World</span> I like making things.</p>
-          </div>
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+          <center><%= image_tag "circular_logo.png", width: "100%", alt:"Profile Image", style:"border-radius:50%;"%></center> 
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-8">
+            <p><span class="display-4">Hello World</span> I like making things.</p>
+             <p>
+                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#jobs" aria-expanded="false" aria-controler="jobs">
+                  Job History
+                </button>
+              </p>
+              <p>
+                <div class="collapse" id="jobs">
+                  <div class="card card-block">
+                    <p>CSR AT DOMINO'S</p>
+                  </div>
+                </div>
+              </p>
+              <p>
+                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#projects" aria-expanded="false" aria-controler="projects">
+                  Projects
+                </button>
+              </p>
+              <p>
+                <div class="collapse" id="projects">
+                  <div class="card card-block">
+                    <p>Ben Sutorius</p>
+                  </div>
+                </div>
+              </p>
+      </div>
     </div>
   </div>
 </div>
