@@ -12,10 +12,11 @@
   </head>
 
   <body>
-    <%= render "shared/application_nav"%>
+    <%= render "shared/main_nav"%>
     <div class="site-wrapper">
       <div class="site-wrapper-inner">
         <div class="cover-container">
+          <!--
           <%= video_tag(
               'beach.mp4',
               id: 'background',
@@ -26,6 +27,11 @@
               
             )
             %>
+            -->
+            <%= image_tag('bodyoutline.png',
+                          id: 'background'
+                          )
+                          %>
           <%= alerts %>
           <%= yield %>
           <%= render "shared/application_footer" %>

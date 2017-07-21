@@ -1,7 +1,4 @@
-<div class="login">
-<div class="card">
-  <h3 class="card-header" style="color:black;">Change Your Password</h3>
-  <div class="card-block">
+<h3 class="" style="color:black;">Change Your Password</h3>
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
   <%= f.hidden_field :reset_password_token %>
@@ -25,7 +22,4 @@
 <% end %>
 <div class="authlinks">
 <%= render "devise/shared/links" %>
-</div>
-</div>
-</div>
 </div>

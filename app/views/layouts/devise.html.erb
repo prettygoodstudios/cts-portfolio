@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%= csrf_meta_tags %>
+    <META name="keywords" content="<%= @seo_keywords %>" />
+    <%= render partial: "shared/header" %>
+    <%= render partial: "shared/fonts" %>
+    <%= stylesheet_link_tag    'devise', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= render "shared/main_nav"%>
+    <div class="row">
+      <div class="col-md-6 left-half" style="margin-top:50px;">
+        <div class="container">
+          <%= yield %>
+        </div>
+      </div>
+      <div class="col-md-6 hidden-xs hidden-sm">
+          <%= image_tag('bodyoutline.png', style: "background-color:#3F51B5;overflow:hidden;" )%>
+          <%= alerts %>
+      </div>
+      <script>
+        window.onresize = function(){
+          if ($('.left-half').width() == window.innerWidth){
+            $('.hidden-sm').hide();
+          }else{
+            $('.hidden-sm').show();
+          }
+        };
+        $(document).ready(function(){
+          if ($('.left-half').width() == window.innerWidth){
+            $('.hidden-sm').hide();
+          }else{
+            $('.hidden-sm').show();
+          }
+        });
+        
+      </script>
+    </div>
+    <%= render partial: "shared/page_footer", locals: {foot_class: "fixed-bottom"} %>
+    <%= render "shared/alerts" %>
+  </body>
+</html>

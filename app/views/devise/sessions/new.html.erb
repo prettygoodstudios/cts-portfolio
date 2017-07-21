@@ -1,7 +1,4 @@
-<div class="login">
-<div class="card">
-  <h3 class="card-header" style="color:black;">Log in</h3>
-  <div class="card-block">
+<h3 class="" style="color:black;">Log in</h3>
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-group">
     <%= f.label :email %><br />
@@ -25,8 +22,5 @@
   </div>
 <% end %>
 <div class="authlinks">
-  <%= render "devise/shared/links" %>
-</div>
-</div>
-</div>
+<%= render "devise/shared/links" %>
 </div>

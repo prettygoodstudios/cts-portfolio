@@ -1,0 +1,77 @@
+<style>
+  .nav-link{
+    font-family: 'Slabo 27px', serif !important;
+    text-align: center;
+    font-size: 25px !important;
+    color:#292b2c !important;
+  }
+  .nav-link.active{
+    color:#95a5a6 !important;
+  }
+  .navbar-brand{
+    font-family: 'Slabo 27px', serif !important;
+    text-align: center;
+    font-size: 2em !important;
+  }
+  .user-info>img{
+   width:35px !important;
+   height:35px !important;
+  }
+  .user-info{
+    font-size:25px !important;
+  }
+  .dropdown-container {
+    position: relative;
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    top: 100%; /* Bottom of button */
+    right: 0px;
+    border-top: none;
+    background-color: F7F7F7 !important;
+    border-radius:0px,0px,4px,4px !important;
+    box-shadow: none !important;
+    margin-left: 0px; /* More to the left */
+  }
+  .nav-link{
+    padding: 0.0em 2em 0.0em 2em;
+  }
+</style>
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded blog-nav" style="position: fixed;width: 100%;z-index:999;">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle nav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="container">
+    <% branding = "#{ image_tag "circular_logo.png", width:"50px",height:"auto" } <span class='brand-name'>Miguel Rust</span>" %>
+    <%= link_to branding.html_safe, root_path, class:"navbar-brand" %>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <%= nav_helper 'nav-link', 'li' %>
+        <%= login_helper 'user-info nav-link' if current_user.is_a?(GuestUser)%>
+      </ul>
+      <ul class="navbar-nav mr-auto pull-right">
+        <%= login_helper 'user-info nav-link' if !current_user.is_a?(GuestUser)%>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div style="height:75px">
+  
+</div>
+<script>
+  window.onresize = function(){
+    refresh2();
+  };
+  $(document).ready(function(){
+    refresh2();
+  });
+  
+  function refresh2(){
+    if (window.innerWidth < 339){
+      $(".brand-name").html("MR");
+    }else{
+      $(".brand-name").html("Miguel Rust");
+    }
+  }
+</script>

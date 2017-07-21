@@ -1,8 +1,28 @@
           <div class="inner cover">
-            <h1 class="cover-heading">Welcome</h1>
-            <p class="lead">I am a young and aspiring web developer based in Orem,UT. I have worked on all sorts of projects from portfolio page for an artist to a site for a local preeschool.</p>
+            <h1 class="cover-heading" style="color:white;text-align:left;">Welcome</h1>
+            <p class="lead des" style="color:black;text-align:left;max-width:75%;">I am a young and aspiring web developer based in Orem,UT. I have worked on all sorts of projects from portfolio page for an artist to a site for a local preeschool.</p>
             <p class="lead">
-              <%= link_to "About ME", about_path, class: 'btn btn-lg btn-secondary' %>
+              <%= link_to "About Me", about_path, class: 'btn btn-lg pull-left' %>
             </p>
           </div>
-
+          <script>
+            window.onresize = function(){
+              refresh();
+            };
+            $(document).ready(function(){
+              refresh();
+            });
+            
+            function refresh(){
+              refresh2();
+              if (window.innerWidth < 640){
+                $(".des").hide();
+                $(".cover-heading").css("color","black");
+                $(".btn-lg").removeClass("btn-secondary").addClass("btn-info");
+              }else{
+                $(".des").show();
+                $(".cover-heading").css("color","white");
+                $(".btn-lg").addClass("btn-secondary").removeClass("btn-info");
+              }
+            }
+          </script>

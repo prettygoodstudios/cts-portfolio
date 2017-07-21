@@ -30,7 +30,8 @@ html,
 body {
   height: 100%;
   font-family: 'Slabo 27px', serif;
-  overflow: hidden;
+  overflow: none;
+  overflow-x: hidden;
 }
 h1, h3, h2{
   font-family: 'Slabo 27px', serif;
@@ -40,7 +41,7 @@ p{
 }
 body {
   color: #fff;
-  background-color:#3F51B5;
+  background-color: white;
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
@@ -96,7 +97,7 @@ body {
  * Affix and center
  */
 
-@media (min-width: 0em) {
+@media (min-width: 40em) {
   /* Pull out the header and footer */
   .masthead {
     position: fixed;
@@ -165,37 +166,22 @@ body {
   transform: translateX(-50%) translateY(-50%);
   background-color:#3F51B5;
 }
-.app-footer{
-  color:white;
-}
-.masthead{
-    background-color: black;
-    width: 100%;
+
+.left-half{
+  background-color: white;
+  overflow-y: scroll !important;
+  max-height: 100%;
+  margin-bottom: 150px;
 }
 
-.tech-news{
-  color:black;
-  margin:20px;
+footer {
+  background-color:#ecf0f1;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
-.tech-news a{
-  color:blue;
+label {
+  color: black;
 }
-.tech-news > .card{
-   padding: 30px;
+footer p {
+  margin-bottom: .25rem;
 }
-.app-card-container{
-  color:black;
-  text-align: left;
-}
-.app-card-container > .card{
-  padding: 40px;
-}
-.card-block{
-  margin-bottom: 5px;
-  margin-top: 5px;
-}
-.skill{
-  margin-bottom: 10px;
-  margin-top: 10px;
-}
-

@@ -1,0 +1,21 @@
+<!--
+<div class='dropdown'>
+  <%= link_to (current_user.name+gravatar_helper(current_user)).html_safe,'#', class: style+" dropdown-toggle",id: "dropdownMenuButton" ,data: { toggle: 'dropdown'} %>
+  <div class='dropdown-menu' aria-labelledby='dropdownMenuButton'>
+    <a href='<%= destroy_user_session_path %>' method='delete' class='dropdown-item'>logout</a>
+  </div>
+</div>
+-->
+<li class="nav-link">
+  <div class="dropdown-container">
+    <div class="hidden-xs hidden-sm">
+      <a data-toggle="collapse" class="<%= style %>" data-target="#profile" aria-expanded="false" aria-controler="profile" style="">
+        <%= (current_user.first_name+" "+gravatar_helper(current_user)).html_safe %>
+      </a>
+      <div class="collapse dropdown-menu hidden-xs hidden-sm" id="profile">
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+        <%= link_to "Edit" , edit_user_registration_path, class: 'dropdown-item'%>
+      </div>
+    </div>
+  </div>
+</li>

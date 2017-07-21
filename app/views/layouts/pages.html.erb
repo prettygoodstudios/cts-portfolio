@@ -7,20 +7,18 @@
     <META name="keywords" content="<%= @seo_keywords %>" />
     <%= render partial: "shared/header" %>
     <%= render partial: "shared/fonts" %>
-    <%= stylesheet_link_tag    'blogs', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'pages', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= render "shared/main_nav" %>
-    <%= render "shared/blog_masthead"%>
+    <%= render "shared/main_nav"%>
+    <br>
     <div class="container">
-      <div class="row">
-    <%= yield %>
-    <%= render "shared/blog_sidebar" %>
-      <!-- Footer -->
+      <%= alerts %>
+      <%= yield %>
+      <%= render "shared/alerts" %>
     </div>
-    </div>
-    <%= render "shared/blog_footer"%>
+    <%= render partial: "shared/page_footer", locals: {foot_class:"fixed-bottom"} %>
   </body>
 </html>

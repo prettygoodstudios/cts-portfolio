@@ -1,6 +1,6 @@
 module BlogsHelper
   def gravatar_helper user
-    image_tag "https://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(user.email)}", width: 60
+    image_tag "https://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(user.email)}", width: 60, style:"border-radius:50%"
   end
   
   class CodeRayify < Redcarpet::Render::HTML

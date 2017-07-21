@@ -1,5 +1,117 @@
-// Place all the styles related to the Pages controller here.
+// Place all the styles related to the Portfolios controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "bootstrap";
 @import "gritter";
+body {
+  font-family: 'Slabo 27px', serif;
+  min-height: 75rem; /* Can be removed; just added for demo purposes */
+}
+
+.navbar {
+  margin-bottom: 0;
+}
+
+.jumbotron {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  margin-bottom: 0;
+  background-color: #fff;
+}
+
+.jumbotron p:last-child {
+  margin-bottom: 0;
+}
+
+.jumbotron-heading {
+  font-weight: 300;
+}
+
+.jumbotron .container {
+  max-width: 40rem;
+}
+
+.album {
+  min-height: 50rem; /* Can be removed; just added for demo purposes */
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background-color: #f7f7f7;
+}
+
+.card {
+  float: left;
+  width: 100%;
+  padding: .75rem;
+  margin-bottom: 2rem;
+  border: 0;
+   background-color:#ecf0f1;
+}
+
+.card > img {
+  display: inline;
+}
+
+.card-text {
+  font-size: 85%;
+}
+
+footer {
+  background-color:#ecf0f1;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+footer p {
+  margin-bottom: .25rem;
+}
+/* Custom Styles */
+
+.portfolio-container{
+  padding-top: 30px;
+}
+h1, h3, h2{
+  font-family: 'Slabo 27px', serif;
+}
+p{
+  font-family: 'Raleway', sans-serif;
+}
+.card-block{
+  color:black;
+  text-align: left !important;
+}
+.card-block>.card-header{
+  color: black !important;
+}
+
+.tech-news{
+  color:black;
+  margin:20px;
+}
+.tech-news a{
+  color:blue;
+}
+.tech-news > .card{
+   padding: 30px;
+}
+.app-card-container{
+  color:black;
+  text-align: left;
+}
+.app-card-container > .card{
+  padding: 40px;
+}
+.card-block{
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+.skill{
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+/* Tab Content */
+
+#exTab2 h3 {
+  color : white;
+  background-color: #428bca;
+  padding : 5px 15px;
+}
