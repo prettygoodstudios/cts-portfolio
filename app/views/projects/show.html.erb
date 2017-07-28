@@ -1,0 +1,6 @@
+<h1><%= @project.title %></h1>
+<p><%= @project.description %></p>
+<%= link_to "Visit", @project.url, class: 'btn btn-primary' %>
+<%= link_to "Edit", edit_project_path(@project), class: 'btn btn-success' %>
+<%= link_to "Delete", @project, class: 'btn btn-danger', method: :delete %>
+<%= link_to "Back", projects_path, class: 'btn btn-danger' %>

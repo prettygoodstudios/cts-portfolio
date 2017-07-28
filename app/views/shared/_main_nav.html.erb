@@ -24,18 +24,29 @@
     position: relative;
   }
   
-  .dropdown-menu {
+  .nav-link{
+    padding: 0.0em 2em 0.0em 2em;
+  }
+  .profile-menu{
     position: absolute;
-    top: 100%; /* Bottom of button */
+    top: 130%; /* Bottom of button */
     right: 0px;
-    border-top: none;
-    background-color: F7F7F7 !important;
-    border-radius:0px,0px,4px,4px !important;
+    border-radius: 0px 0px 10px 10px !important;
+    overflow: hidden;
     box-shadow: none !important;
     margin-left: 0px; /* More to the left */
   }
-  .nav-link{
-    padding: 0.0em 2em 0.0em 2em;
+  .profile-menu>li{
+    background: #F7F7F7 !important;
+  }
+  .dropdown-item{
+    background-color: #F7F7F7 !important;
+  }
+  .dropdown-item:hover{
+    background-color: #B8B3B3 !important;
+  }
+  .preventHover:hover{
+    background-color: #F7F7F7 !important;
   }
 </style>
 <nav class="navbar navbar-toggleable-md navbar-light bg-faded blog-nav" style="position: fixed;width: 100%;z-index:999;">
@@ -50,7 +61,7 @@
         <%= nav_helper 'nav-link', 'li' %>
         <%= login_helper 'user-info nav-link' if current_user.is_a?(GuestUser)%>
       </ul>
-      <ul class="navbar-nav mr-auto pull-right">
+      <ul class="navbar-nav mr-auto navbar-right">
         <%= login_helper 'user-info nav-link' if !current_user.is_a?(GuestUser)%>
       </ul>
     </div>
@@ -73,5 +84,24 @@
     }else{
       $(".brand-name").html("Miguel Rust");
     }
+    if (window.innerWidth < 992){
+      $(".profile-menu").css("position","relative");
+    }else{
+      $(".profile-menu").css("position","absolute");
+    }
   }
+  $(".dropdown-item").hover(function(){
+    if (window.innerWidth < 992){
+      $(".dropdown-item").addClass("preventHover");
+    }else{
+      $(".dropdown-item").removeClass("preventHover");
+    }
+  });
+  $(".user-info").click(function(){
+    if($(".fa-caret-down").length > 0 ){
+      $(".fa-caret-down").removeClass("fa-caret-down").addClass("fa-caret-up");
+    }else{
+      $(".fa-caret-up").addClass("fa-caret-down").removeClass("fa-caret-up");
+    }
+  });
 </script>

@@ -17,4 +17,10 @@ class PagesController < ApplicationController
   def tech_news
     @tweets = SocialTool.twitter_search
   end
+  def google
+    render :layout => false
+  end
+  def social
+    render :layout => false
+  end
 end

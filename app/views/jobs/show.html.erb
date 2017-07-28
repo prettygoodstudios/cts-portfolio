@@ -1,0 +1,5 @@
+<h1><%= @job.title %></h1>
+<p><%= @job.description %></p>
+<%= link_to "Edit", edit_job_path(@job), class: 'btn btn-success' %>
+<%= link_to "Delete", @job, class: 'btn btn-danger', method: :delete %>
+<%= link_to "Back", jobs_path, class: 'btn btn-danger' %>

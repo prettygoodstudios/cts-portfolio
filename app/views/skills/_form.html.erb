@@ -1,0 +1,20 @@
+<%= form_with(model: skill, local: true) do |form| %>
+  <% if skill.errors.any? %>
+      <% skill.errors.full_messages.each do |error| %>
+        <%= alert_generator error %>
+      <% end %>
+  <% end %>
+  <div class="form-group">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :skill_title, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= form.label :percent_utilized %>
+    <%= form.text_field :percent_utilized, id: :skill_percent_utilized, class: "form-control" %>
+  </div>
+  <div class="actions">
+    <%= form.submit "Submit", class: "btn btn-primary"%>
+  </div>
+<% end %>
+<br>
+<%= link_to "Back", skills_path, class: "btn btn-danger" %>
