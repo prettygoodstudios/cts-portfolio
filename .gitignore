@@ -18,4 +18,5 @@
 
 .byebug_history
  #I Dont Want To Show Secrets
-/config/secrets.yml
+# Ignore application configuration
+/config/application.yml
