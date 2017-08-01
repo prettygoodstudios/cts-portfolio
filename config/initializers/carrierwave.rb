@@ -15,7 +15,6 @@ CarrierWave.configure do |config|
     secret_access_key: ENV['_FIGARO_AWS_Secret_Key'],
     region:            ENV['_FIGARO_AWS_REGION'] # Required
   }
-  byebug
   # Optional: Signing of download urls, e.g. for serving private content through
   # CloudFront. Be sure you have the `cloudfront-signer` gem installed and
   # configured:
