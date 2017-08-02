@@ -11,9 +11,9 @@ CarrierWave.configure do |config|
     cache_control: 'max-age=604800'
   }
   config.aws_credentials = {
-    access_key_id:     ENV['_FIGARO_AWS_Access_Key_Id'],
-    secret_access_key: ENV['_FIGARO_AWS_Secret_Key'],
-    region:            ENV['_FIGARO_AWS_REGION'] # Required
+    access_key_id:     ENV['AWS_Access_Key_Id'],
+    secret_access_key: ENV['AWS_Secret_Key'],
+    region:            ENV['AWS_REGION'] # Required
   }
   # Optional: Signing of download urls, e.g. for serving private content through
   # CloudFront. Be sure you have the `cloudfront-signer` gem installed and
