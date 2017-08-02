@@ -71,4 +71,4 @@ gem 'redcarpet', '~> 3.4'
 gem 'coderay', '~> 1.1', '>= 1.1.1'
 gem 'hirb'
 gem "figaro"
-ruby "2.4.0p0"
+ruby "2.4.0"
