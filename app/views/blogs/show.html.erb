@@ -12,7 +12,7 @@
     </span>
   </nav>
   <p><%= @blog.topic.title %></p>
-  <p><%= markdown @blog.body %></p>
+  <p><%= markdown @blog.body.sub("</fold>","") %></p>
   
   <!-- Start of comment form -->
   <%= render partial: 'comments/comment_toggle', locals: {comments: @blog.comments.count} %>

@@ -5,7 +5,7 @@
       <%= render partial: 'blogs/admin_actions', locals: { blog: blog} %>
   </p>
   <p class="blog-post-meta">
-    <%= markdown(blog.body) %>
+    <%= markdown(blog.body.split("</fold>")[0]) %>
     
   </p>
 </div><!-- /.blog-post -->
