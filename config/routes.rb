@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources "projects"
   resources "jobs"
   resources "skills"
+  resources "offers"
   devise_for :users, path: '', path_names: {sign_in: 'login', sign_out: 'logout', sign_up: "register"}
   resources :portfolios, except:[:show] do
     put :sort, on: :collection
@@ -14,6 +15,7 @@ Rails.application.routes.draw do
   get 'tech-news', to: 'pages#tech_news'
   get 'gootle', to: 'pages#google'
   get 'social', to: 'pages#social'
+  post 'sendemail', to: 'pages#send_email'
   resources :blogs do
     member do
       get :toggle_status

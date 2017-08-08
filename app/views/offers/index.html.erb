@@ -1,0 +1,6 @@
+<h1>Offers</h1>
+<ul>
+  <% @offers.all.each do |o| %>
+    <li><%= o.title %> <%= link_to "View", o, class: 'btn btn-success' %></li>
+  <% end %>
+</ul>

@@ -8,7 +8,8 @@
  * Globals
  */
 
-
+$mainFont: 'Raleway', sans-serif;
+$secondFont: 'Roboto', sans-serif;
 
 body {
   
@@ -151,8 +152,8 @@ body {
   margin-bottom: 30px;
 }
 h1, h3, h2{
-  font-family: 'Roboto', sans-serif;
+  font-family: $secondFont;
 }
 p{
-  font-family: 'Raleway', sans-serif;
+  font-family: $mainFont;
 }

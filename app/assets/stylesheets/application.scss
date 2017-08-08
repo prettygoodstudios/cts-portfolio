@@ -1,10 +1,15 @@
 @import "bootstrap";
 @import "gritter";
 @import "font-awesome";
+
+/*Varibales*?
+
 /*
  * Globals
  */
-
+$background: #3F51B5;
+$mainFont: 'Raleway', sans-serif;
+$secondFont: 'Slabo 27px', serif; 
 /* Links */
 a,
 a:focus,
@@ -30,18 +35,18 @@ a:hover {
 html,
 body {
   height: 100%;
-  font-family: 'Slabo 27px', serif;
+  font-family: $secondFont;
   overflow: hidden;
 }
 h1, h3, h2{
-  font-family: 'Slabo 27px', serif;
+  font-family: $secondFont;
 }
 p{
-  font-family: 'Raleway', sans-serif;
+  font-family: $mainFont
 }
 body {
   color: #fff;
-  background-color:#3F51B5;
+  background-color: $background;
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
@@ -164,7 +169,7 @@ body {
   z-index: -100;
   -webkit-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
-  background-color:#3F51B5;
+  background-color: $background;
 }
 .app-footer{
   color:white;
@@ -199,4 +204,3 @@ body {
   margin-bottom: 10px;
   margin-top: 10px;
 }
-

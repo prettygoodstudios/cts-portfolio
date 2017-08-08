@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+  require 'gmail'
+  require 'mail'
   def home
     render layout: 'application'
     @posts = Blog.all
@@ -22,5 +24,13 @@ class PagesController < ApplicationController
   end
   def social
     render :layout => false
+  end
+  def send_email
+    if params[:title] == "" || params[:content] == "" || params[:email] == ""
+      redirect_to root_path, alert: "Incomplete Form"
+    else
+      Offer.create!(title: params[:title],content: params[:content], email: params[:email])
+      redirect_to root_path,  alert: "Contact Form Sent"
+    end
   end
 end

@@ -71,4 +71,6 @@ gem 'redcarpet', '~> 3.4'
 gem 'coderay', '~> 1.1', '>= 1.1.1'
 gem 'hirb'
 gem "figaro"
+gem 'gmail', '~> 0.6.0'
+gem 'mail', '~> 2.6', '>= 2.6.6'
 ruby "2.4.0"
