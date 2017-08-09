@@ -16,7 +16,7 @@
     <%= render 'shared/main_nav' %>
     <!-- End of Navbar -->
     <!-- Masthead -->
-    <%= render 'shared/portfolio_masthead' unless logged_in?(:site_admin) %>
+    <%= render 'shared/portfolio_masthead' unless logged_in?(:site_admin) || params[:action] == "show" %>
     <!-- End of Masthead -->
     <%= yield %>
     <!-- Start of Footer -->
