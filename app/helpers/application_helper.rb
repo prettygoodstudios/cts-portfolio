@@ -14,9 +14,6 @@ module ApplicationHelper
       content_tag(:p,greeting.html_safe, class: styles)
     end
   end
-  def copyright_generator
-    @copyright = RustViewTool::Renderer.copyright 'Miguel Rust', 'All Rights Reserved'
-  end
   def nav_items
     [
       {
